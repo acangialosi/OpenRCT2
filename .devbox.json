@@ -1,0 +1,34 @@
+{
+  "variables": {
+    "commit_id": "{{env ‘commit_id’}}"
+  },
+  "builders": [{
+    "type": "azure-arm",
+    "managed_image_name": "DevBoxImage",
+    "os_type": "Windows",
+    "image_publisher": "MicrosoftWindowsDesktop",
+    "image_offer": "windows-11",
+    "image_sku": "win11-21h2-ent",
+    "vm_size": " Standard_D32_v5"
+  }],
+  "environment_vars": [
+    "commit_id = {{env ‘commit_id’}}"
+  ],
+  "provisioners": [{
+    "type": "powershell",
+    "inline": [
+      "winget source add Contoso https://contoso.com/packages",
+      "winget install Microsoft.VisualStudio -s Contoso",
+      "winget install Microsoft.VisualStudio.Copilot -s Contoso",
+      "winget install Postman.Postman -s Contoso",
+      "winget install LINQPad.LINQPad -s Contoso",
+      …
+    ], 
+    "type": "powershell",
+    "scripts": [
+      "clone-repo.ps1",
+      "copy-binaries.ps1",
+      "copy-cache.ps1"
+    ]  
+  }]
+}
