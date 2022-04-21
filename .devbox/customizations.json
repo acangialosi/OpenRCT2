@@ -20,9 +20,20 @@
       "winget source add Contoso https://contoso.com/packages",
       "winget install Microsoft.VisualStudio -s Contoso",
       "winget install Microsoft.VisualStudio.Copilot -s Contoso",
-      "winget install Postman.Postman -s Contoso",
+      "winget install 7zip -s Contoso",
+      "winget install Fiddler -s Contoso",
+      "winget install nugetpackageexplorer -s Contoso",
+      "winget install windows-sdk-11-version-21h2-all -s Contoso",
+      "winget install dotnet-6.0-sdk -s Contoso",
+      "winget install git-credential-manager-for-windows -s Contoso",
+      "winget install git -s Contoso",
+      "winget install git-lfs -s Contoso",
+      "winget install CodeTrack -s Contoso",
+      "winget install WinDbg -s Contoso",
       "winget install LINQPad.LINQPad -s Contoso",
-      …
+      "winget install anaconda3 -s Contoso",
+      "winget install Julia -s Contoso",
+      "winget install JupyterLab -s Contoso"
     ], 
     "type": "powershell",
     "scripts": [
